@@ -1,0 +1,23 @@
+@import '~normalize.css';
+@import "variables";
+@import "grid";
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ng-component { display: block; }
