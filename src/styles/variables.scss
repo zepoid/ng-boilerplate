@@ -9,12 +9,12 @@ $base-font-size: 12;
 $grid-columns: 12;
 $grid-gutter-width: (
   sm: 20px,
-  med: 24px,
+  md: 24px,
   lg: 60px,
 );
 $grid-col-gutter-width: (
   sm: 12px,
-  med: 12px,
+  md: 12px,
   lg: 15px,
 );
 
@@ -24,18 +24,18 @@ $grid-col-gutter-width: (
 
 // High-side width for each layout
 $bp-small:    767px;
-$bp-medium:   767px;
-$bp-large:    9999px;
+$bp-medium:   991px;
+$bp-large:    1199px;
 $bp-xlarge:   9999px;
 
 $grid-breakpoints-low: (
   sm: 0, // The first breakpoint needs to be 0 to allow elements to position properly below other breakpoints
-  med: $bp-small + 1,
+  md: $bp-small + 1,
   lg: $bp-medium + 1,
 );
 $grid-breakpoints-high: (
   sm: $bp-small,
-  med: $bp-medium,
+  md: $bp-medium,
   lg: $bp-large,
 );
 
