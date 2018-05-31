@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LayoutModule } from '../layouts/layouts.module';
+import { LayoutModule } from '../../../layouts/layouts.module';
 
 
 @NgModule({
