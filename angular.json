@@ -9,6 +9,7 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {
+        // https://github.com/angular/angular-cli/blob/v6.0.0-rc.8/packages/%40angular/cli/lib/config/schema.json#L74-L144
         "@schematics/angular:component": {
           "styleext": "scss",
           "viewEncapsulation": "None"
