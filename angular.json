@@ -3,13 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-boilerplate": {
+    "boilerplate": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "projects/boilerplate/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
-        // https://github.com/angular/angular-cli/blob/v6.0.0-rc.8/packages/%40angular/cli/lib/config/schema.json#L74-L144
         "@schematics/angular:component": {
           "styleext": "scss",
           "viewEncapsulation": "None"
@@ -19,17 +18,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-boilerplate",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "projects/boilerplate/dist/ng-boilerplate",
+            "index": "projects/boilerplate/src/index.html",
+            "main": "projects/boilerplate/src/main.ts",
+            "polyfills": "projects/boilerplate/src/polyfills.ts",
+            "tsConfig": "projects/boilerplate/src/tsconfig.app.json",
             "assets": [
-              "src/app/assets/favicon.ico",
-              "src/app/assets"
+              "projects/boilerplate/src/app/assets/favicon.ico",
+              "projects/boilerplate/src/app/assets"
             ],
             "styles": [
-              "src/app/styles/_index.scss"
+              "projects/boilerplate/src/app/styles/_index.scss"
             ],
             "scripts": []
           },
@@ -37,8 +36,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/boilerplate/src/environments/environment.ts",
+                  "with": "projects/boilerplate/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -56,34 +55,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-boilerplate:build"
+            "browserTarget": "boilerplate:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-boilerplate:build:production"
+              "browserTarget": "boilerplate:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-boilerplate:build"
+            "browserTarget": "boilerplate:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "projects/boilerplate/src/test.ts",
+            "polyfills": "projects/boilerplate/src/polyfills.ts",
+            "tsConfig": "projects/boilerplate/src/tsconfig.spec.json",
+            "karmaConfig": "projects/boilerplate/src/karma.conf.js",
             "styles": [
-              "src/app/styles/_index.scss"
+              "projects/boilerplate/src/app/styles/_index.scss"
             ],
             "scripts": [],
             "assets": [
-              "src/app/assets/favicon.ico",
-              "src/app/assets"
+              "projects/boilerplate/src/app/assets/favicon.ico",
+              "projects/boilerplate/src/app/assets"
             ]
           }
         },
@@ -91,8 +90,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "projects/boilerplate/src/tsconfig.app.json",
+              "projects/boilerplate/src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -101,7 +100,7 @@
         }
       }
     },
-    "ng-boilerplate-e2e": {
+    "boilerplate-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -109,11 +108,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-boilerplate:serve"
+            "devServerTarget": "boilerplate:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-boilerplate:serve:production"
+              "devServerTarget": "boilerplate:serve:production"
             }
           }
         },
@@ -127,7 +126,47 @@
           }
         }
       }
+    },
+    "boilerplate-core": {
+      "root": "projects/boilerplate-core",
+      "sourceRoot": "projects/boilerplate-core/src",
+      "projectType": "library",
+      "prefix": "core",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/boilerplate-core/tsconfig.lib.json",
+            "project": "projects/boilerplate-core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/boilerplate-core/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/boilerplate-core/src/test.ts",
+            "tsConfig": "projects/boilerplate-core/tsconfig.spec.json",
+            "karmaConfig": "projects/boilerplate-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/boilerplate-core/tsconfig.lib.json",
+              "projects/boilerplate-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ng-boilerplate"
+  "defaultProject": "boilerplate"
 }

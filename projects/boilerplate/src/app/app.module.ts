@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BoilerplateCoreModule } from 'boilerplate-core';
 
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layouts/layouts.module';
@@ -11,6 +12,7 @@ import { PageModule } from './modules/core/pages/pages.module';
   ],
   imports: [
     BrowserModule,
+    BoilerplateCoreModule,
     LayoutModule,
   ],
   providers: [],
