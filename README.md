@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Global Settings / Implementations
+
+* CSS
+  * Box Model: `box-sizing: border-box;`
+  * Touch Scrolling: `-webkit-overflow-scrolling: touch;`
+
+## Conventions
+
+* All custom components shall include the `.ng-component` class
+* Layouts include Content Slots, which include both app-controlled and cms-controlled varieties
+  * e.g. `contentslot-app1`, `contentslot-cms1`, etc.
+
+## TODO
+* Universal components
+* Google Maps integration
+* HTTP/API/Content ng-services
+* Default Content
