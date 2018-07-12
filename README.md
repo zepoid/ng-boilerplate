@@ -39,7 +39,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * e.g. `contentslot-app1`, `contentslot-cms1`, etc.
 
 ## General Notes
-* IE 9, 10, 11 polyfills have been included
+* IE 9, 10, 11 polyfills have been included [source](https://blog.angularindepth.com/angular-and-internet-explorer-5e59bb6fb4e9)
 
 ## TODO
 * Universal components
