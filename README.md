@@ -38,6 +38,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Layouts include Content Slots, which include both app-controlled and cms-controlled varieties
   * e.g. `contentslot-app1`, `contentslot-cms1`, etc.
 
+## General Notes
+* IE 9, 10, 11 polyfills have been included
+
 ## TODO
 * Universal components
 * Google Maps integration
